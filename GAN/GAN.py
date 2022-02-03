@@ -113,7 +113,7 @@ for epoch in range(num_epochs):
         lossG.backward()
         optimizer_gen.step()
 
-        if batch_index == 0:
+        if batch_index % 100 == 0:
             print(
                 f"Epoch [{epoch}/{num_epochs}] \n"
                 f"Loss D:{lossD:.4f}, Loss G:{lossG:.4f}"
@@ -133,15 +133,4 @@ for epoch in range(num_epochs):
                     'Mnist Real Image',img_grid_real,global_step=step
                 )
                 step+=1
-                
-
-
-
-
-
-
-
-
-
-
   
